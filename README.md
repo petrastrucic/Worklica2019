@@ -7,11 +7,6 @@
 ## Generate new project
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
-3) add into app.component.html:
-
-`<h1>{{title}}</h1>`
-
-4) `ng serve`
 - [x] My new project is generated
 	
 ## Install bootstrap & font-awesome, add CSS
