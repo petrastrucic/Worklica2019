@@ -275,6 +275,7 @@ selectedForceWeilder: ForceWeilder;
 constructor(private weilderService: ForceWeilderService) { }
 
 ngOnInit() {
+  this.weilders = this.weilderService.getHeroes();
 }
 
 onSelect(forceWeilder: ForceWeilder): void {
