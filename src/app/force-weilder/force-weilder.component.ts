@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ForceWeilder } from '../force-weilder';
 
 @Component({
   selector: 'app-force-weilder',
@@ -9,7 +10,11 @@ export class ForceWeilderComponent implements OnInit {
 
   constructor() { }
 
-  forceWeilder = "Mace Windu";
+  forceWeilder: ForceWeilder = {
+    id : 1,
+    name : "Mace Windu",
+    force: 42
+  }
 
   ngOnInit() {
   }
