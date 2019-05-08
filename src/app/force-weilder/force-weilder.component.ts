@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ForceWeilder } from '../force-weilder';
-import { WEILDERS } from '../weilders';
 import { ForceWeilderService } from '../force-weilder.service';
 
 @Component({
@@ -25,6 +25,7 @@ export class ForceWeilderComponent implements OnInit {
   }
 
   getWeilders(): void {
-    this.weilders = this.weilderService.getWeilders();
+    this.weilderService.getWeilders()
+      .subscribe(weilders => this.weilders = weilders);;
   }
 }
