@@ -7,9 +7,6 @@
 ## Generate new project: initial-branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
-3) add into .gitignore:
-
-`\package-lock.json`
 
 - [x] My new project is generated
 	
