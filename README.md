@@ -17,6 +17,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 ```
+4) `npm i`
 3) `ng serve`
 4) add into src/styles.css:
 ```
