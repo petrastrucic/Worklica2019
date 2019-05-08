@@ -143,9 +143,10 @@ imports: [
 - [x] Added my first 2-way binding
 
 ### DIRECTIVES
-23) create mock-force-weilders.ts:
+1) create mock-force-weilders.ts:
 ```
 import { ForceWeilder } from './force-weilder';
+
 export const WEILDERS: ForceWeilder[] = [
   { id: 11, name: 'Count Dooku' , force: 100 },
   { id: 12, name: 'Ahsoka Tano' , force: 60 },
@@ -159,11 +160,11 @@ export const WEILDERS: ForceWeilder[] = [
   { id: 20, name: 'Darth Sidious' , force: 9999 }
 ]
 ```
-24) add into force-weilders.ts:
+2) add into force-weilders.ts:
 
 `weilders = WEILDERS;`
 
-25) add into force-weilder.component.html:
+3) add into force-weilder.component.html:
 ```
 <h2>My Force Weilders</h2>
 <ul class="weilders">
@@ -171,7 +172,7 @@ export const WEILDERS: ForceWeilder[] = [
   <span class="badge">{{weilder.id}}</span> {{weilder.name}}
 </ul>
 ```
-26) replace all in force-weilder.component.css:
+4) replace all in force-weilder.component.css:
 ```
 .selected {
   background-color: #CFD8DC !important;
@@ -190,7 +191,7 @@ export const WEILDERS: ForceWeilder[] = [
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 2.5em;
   border-radius: 4px;
 }
   .weilders li.selected:hover {
@@ -209,42 +210,42 @@ export const WEILDERS: ForceWeilder[] = [
 .weilders .badge {
   display: inline-block;
   font-size: small;
-  color: white;
+  color: #e9ecef;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
+  background-color: #17a2b8;
+  line-height: 1.75em;
   position: relative;
   left: -1px;
   top: -4px;
-  height: 1.8em;
+  height: 3.0em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
 ```
-27) replace all in force-weilder.component.html:
+5) replace all in force-weilder.component.html:
 ```
 <h2>My Force Weilders</h2>
 <ul class="weilders">
-  <li *ngFor="let weilder of weilders"
-    [class.selected]="weilder === selectedForceWeilder"
-    (click)="onSelect(weilder)">
-    <span class="badge">{{weilder.id}}</span> {{weilder.name}} 
-  </li>
+    <li *ngFor="let weilder of weilders" [class.selected]="weilder === selectedForceWeilder"
+        (click)="onSelect(weilder)">
+        <span class="badge">{{weilder.id}}</span> {{weilder.name}}
+    </li>
 </ul>
 <div *ngIf="selectedForceWeilder">
-  <h2>{{forceWeilder.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{forceWeilder.id}}</div>
-  <label>name:
-    <input [(ngModel)]="selectedForceWeilder.name" placeholder="name"/>
-  </label>
-  <div>
-    <label>force:
-      <input [(ngModel)]="selectedForceWeilder.force" placeholder="force"/>
+    <h2>{{selectedForceWeilder.name | uppercase}} Details</h2>
+    <div><span>Id : </span>{{selectedForceWeilder.id}}</div>
+    <label>Name:
+        <input [(ngModel)]="selectedForceWeilder.name" placeholder="name" />
     </label>
-  </div>
+    <div>
+        <label>Force:
+            <input [(ngModel)]="selectedForceWeilder.force" placeholder="force" />
+        </label>
+    </div>
+    <div><span>ForceToThird: </span>{{selectedForceWeilder.force | forceToThird}}</div>
 </div>
 ```
-28) add into force-weilder.component.ts:
+6) add into force-weilder.component.ts:
 ```
 weilders = WEILDERS;
 selectedForceWeilder: ForceWeilder;
@@ -255,18 +256,18 @@ onSelect(forceWeilder: ForceWeilder): void {
   this.selectedForceWeilder = forceWeilder;
 }
 ```
-29) `ng generate directive --spec=false`
+7) `ng generate directive --spec=false`
 - [x] Added my first directive
 
 ### SERVICES
-30) `ng generate service force-weilder --spec=false`
-31) add into force-weilder.service.ts:
+1) `ng generate service force-weilder --spec=false`
+2) add into force-weilder.service.ts:
 ```
 getHeroes(): ForceWeilder[] {
   return WEILDERS;
 }
 ```
-32) replace in force-weilders.component.cs:
+3) replace in force-weilders.component.cs:
 ```
 weilders: ForceWeilder[];
 selectedForceWeilder: ForceWeilder;
@@ -285,14 +286,14 @@ getHeroes(): void {
 }
 ```
 Async:
-33) replace in force-weilders.component.cs:
+4) replace in force-weilders.component.cs:
 ```
 getHeroes(): void {
   this.weilderService.getWeilders()
     .subscribe(weilders => this.weilders = weilders);;
 }
 ```
-34) replace in force-weilders.service.ts:
+5) replace in force-weilders.service.ts:
 ```
 getWeilders(): Observable<ForceWeilder[]> {
   return of(WEILDERS);
@@ -301,8 +302,8 @@ getWeilders(): Observable<ForceWeilder[]> {
 - [x] Generated my first service
 
 ### ROUTING
-35) `ng generate module app-routing --flat --module=app --spec=false`
-36) add const into app-routing.module.ts:
+1) `ng generate module app-routing --flat --module=app --spec=false`
+2) add const into app-routing.module.ts:
 ```
 const routes: Routes = [
   { path: 'weilders', component: ForceWeilderComponent }
@@ -313,12 +314,12 @@ and an import:
 `imports: [ RouterModule.forRoot(routes) ]`
 
 Rest can be deleted.
-37) replace in app.component.html:
+3) replace in app.component.html:
 ```
 <h1>{{title}}</h1>
 <router-outlet></router-outlet>
 ```
-38) add as imports into app.module.ts:
+4) add as imports into app.module.ts:
 ```
 AppRoutingModule,
 RouterModule
