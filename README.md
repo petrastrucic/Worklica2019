@@ -62,21 +62,22 @@ export class ForceWeilder {
 - [x] Generated my first class
 
 ### COMPONENT
-4) `ng generate component force-weilder --spec=false`
-5) add into force-weilder.component.ts:
+1) `ng generate component force-weilder --spec=false`
+2) add into force-weilder.component.ts:
 
 `forceWeilder = "Mace Windu";`
 		
-6) add into force-weilder.component.html:
+3) add into force-weilder.component.html:
 
 `{{forceWeilder}}`
 
-7) add into app.component.html:
+4) add into app.component.html:
 
 `<app-force-weilder></app-force-weilder>`
 
-8) `ng serve;`
-9) refactor forceWeilder in force-weilder.comoponent.ts:
+5) update `src` of `img` in app.component.html
+6) `ng serve;`
+7) refactor forceWeilder in force-weilder.comoponent.ts:
 ```
 forceWeilder: ForceWeilder = {
   id : 1,
@@ -84,15 +85,15 @@ forceWeilder: ForceWeilder = {
   force: 42
 }
 ```    
-10) `ng serve;`
-11) refactor force-weilder.component.html into:
+8) `ng serve;`
+9) refactor force-weilder.component.html into:
 ```
 <h2>{{forceWeilder.name}} Details</h2>
 <div><span>id: </span>{{forceWeilder.id}}</div>
 <div><span>name: </span>{{forceWeilder.name}}</div>
 <div><span>force: </span>{{forceWeilder.force}}</div>
 ```
-12) `ng serve;`
+10) `ng serve;`
 - [x] Generated my first component
 
 ### PIPES
