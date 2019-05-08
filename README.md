@@ -4,7 +4,7 @@
 1) `npm install -g @angular/cli`
 - [x] Finish Angular CLI installation
 
-## Generate new project
+## Generate new project: initial-branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
 - [x] My new project is generated
