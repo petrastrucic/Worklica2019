@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ForceWeilder } from '../force-weilder';
-import { WEILDERS } from '../weilders';
+import { ForceWeilderService } from '../force-weilder.service';
 
 @Component({
   selector: 'app-force-weilder',
@@ -9,22 +10,22 @@ import { WEILDERS } from '../weilders';
 })
 export class ForceWeilderComponent implements OnInit {
 
-  constructor() { }
-
-  forceWeilder: ForceWeilder = {
-    id : 1,
-    name : "Mace Windu",
-    force: 42
-  }
-
-  weilders = WEILDERS;
+  // weilders = WEILDERS;
+  weilders: ForceWeilder[];
   selectedForceWeilder: ForceWeilder;
 
+  constructor(private weilderService: ForceWeilderService) { }
+
   ngOnInit() {
+    this.getWeilders();
   }
 
   onSelect(forceWeilder: ForceWeilder): void {
     this.selectedForceWeilder = forceWeilder;
   }
 
+  getWeilders(): void {
+    this.weilderService.getWeilders()
+      .subscribe(weilders => this.weilders = weilders);;
+  }
 }

@@ -263,7 +263,7 @@ onSelect(forceWeilder: ForceWeilder): void {
 1) `ng generate service force-weilder --spec=false`
 2) add into force-weilder.service.ts:
 ```
-getHeroes(): ForceWeilder[] {
+getWeilders(): ForceWeilder[] {
   return WEILDERS;
 }
 ```
@@ -275,20 +275,21 @@ selectedForceWeilder: ForceWeilder;
 constructor(private weilderService: ForceWeilderService) { }
 
 ngOnInit() {
+  this.weilders = this.weilderService.getWeilders();
 }
 
 onSelect(forceWeilder: ForceWeilder): void {
   this.selectedForceWeilder = forceWeilder;
 }
 
-getHeroes(): void {
-  this.weilders = this.weilderService.getHeroes();
+getWeilders(): void {
+  this.weilders = this.weilderService.getWeilders();
 }
 ```
 Async:
 4) replace in force-weilders.component.cs:
 ```
-getHeroes(): void {
+getWeilders(): void {
   this.weilderService.getWeilders()
     .subscribe(weilders => this.weilders = weilders);;
 }
