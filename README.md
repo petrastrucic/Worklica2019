@@ -7,9 +7,6 @@
 ## Generate new project: initial-branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
-3) add into .gitignore:
-
-`\package-lock.json`
 
 - [x] My new project is generated
 	
@@ -20,6 +17,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 ```
+4) `npm i`
 3) `ng serve`
 4) add into src/styles.css:
 ```
