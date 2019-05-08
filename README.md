@@ -275,7 +275,7 @@ selectedForceWeilder: ForceWeilder;
 constructor(private weilderService: ForceWeilderService) { }
 
 ngOnInit() {
-  this.weilders = this.weilderService.getWeilders();
+  this.weilders = this.getWeilders();
 }
 
 onSelect(forceWeilder: ForceWeilder): void {
@@ -291,7 +291,7 @@ Async:
 ```
 getWeilders(): void {
   this.weilderService.getWeilders()
-    .subscribe(weilders => this.weilders = weilders);;
+    .subscribe(weilders => this.weilders = weilders);
 }
 ```
 5) replace in force-weilders.service.ts:
