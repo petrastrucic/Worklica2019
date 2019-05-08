@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ForceWeilder } from '../force-weilder';
+import { WEILDERS } from '../weilders';
 
 @Component({
   selector: 'app-force-weilder',
@@ -16,7 +17,14 @@ export class ForceWeilderComponent implements OnInit {
     force: 42
   }
 
+  weilders = WEILDERS;
+  selectedForceWeilder: ForceWeilder;
+
   ngOnInit() {
+  }
+
+  onSelect(forceWeilder: ForceWeilder): void {
+    this.selectedForceWeilder = forceWeilder;
   }
 
 }
