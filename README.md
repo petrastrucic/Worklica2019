@@ -126,6 +126,7 @@ transform(value: number): number {
 </div>
 ```
 20) `ng serve;`
+
 21) add into app.module.ts:
 
 `import { FormsModule } from '@angular/forms';`

@@ -2,3 +2,9 @@
 <div><span>id: </span>{{forceWeilder.id}}</div>
 <div><span>name: </span>{{forceWeilder.name}}</div>
 <div><span>force: </span>{{forceWeilder.force | forceToThird}}</div>
+
+<div>
+    <label>force:
+        <input [(ngModel)]="forceWeilder.force" placeholder="force" />
+    </label>
+</div>
