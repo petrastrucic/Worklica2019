@@ -97,27 +97,27 @@ forceWeilder: ForceWeilder = {
 - [x] Generated my first component
 
 ### PIPES
-13) refactor 1st line in force-weilder.component.html:
+1) refactor 1st line in force-weilder.component.html:
 
 `<h2>{{forceWeilder.name | uppercase}} Details</h2>`
 
-14) `ng serve;`
-15) `ng generate pipe force-to-third --spec false`
-16) add into force-to-third.ts:
+2) `ng serve;`
+3) `ng generate pipe force-to-third --spec false`
+4) add into force-to-third.ts:
 ```
 transform(value: number): number {
   return Math.pow(value, 3);
 }
 ```
-17) add into force-weilder.component.html:
+5) add into force-weilder.component.html:
 
 `<div><span>force: </span>{{forceWeilder.force | forceToThird}}</div>`
 
-18) `ng serve;`
+6) `ng serve;`
 - [x] Generated my first pipe
 
 ### 2WAY BINDING
-19) add into force-weilder.component.html:
+1) add into force-weilder.component.html:
 ```
 <div>
   <label>force:
@@ -125,9 +125,9 @@ transform(value: number): number {
   </label>
 </div>
 ```
-20) `ng serve;`
+2) `ng serve;`
 
-21) add into app.module.ts:
+3) add into app.module.ts:
 
 `import { FormsModule } from '@angular/forms';`
 
@@ -138,7 +138,8 @@ imports: [
   FormsModule
 ```
   (...)
-22) `ng serve;`
+  
+4) `ng serve;`
 - [x] Added my first 2-way binding
 
 ### DIRECTIVES
