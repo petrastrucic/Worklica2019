@@ -2,6 +2,7 @@
 
 ## NodeJS and Angular CLI installation
 1) `npm install -g @angular/cli`
+- [] Finish Angular CLI installation
 
 ## Generate new project
 1) `ng new [YourName]-Worklica2019`
@@ -9,6 +10,7 @@
 3) add into app.component.html:
 		`<h1>{{title}}</h1>`
 4) `ng serve`
+- [] My new project is generated
 	
 ## Install bootstrap & font-awesome, add CSS
 1) `npm install bootstrap font-awesome`
@@ -43,6 +45,7 @@
   }
 ```
 5) `ng serve`
+- [] Bootstrap and font-awesome installed, and basic css added
 	
 ## ng generate
 1) `ng generate` / `ng help`
@@ -57,6 +60,7 @@
     force: number;
   }
 ```
+- [] Generated my first class
 
 ### COMPONENT
 4) `ng generate component force-weilder --spec=false`
@@ -86,6 +90,7 @@
   <div><span>name: </span>{{forceWeilder.name}}</div>
 ```
 12) `ng serve;`
+- [] Generated my first component
 
 ### PIPES
 13) refactor 1st line in force-weilder.component.html:
@@ -101,6 +106,7 @@
 17) add into force-weilder.component.html:
   `<div><span>force: </span>{{forceWeilder.force | forceToThird}}</div>`
 18) `ng serve;`
+- [] Generated my first pipe
 
 ### 2WAY BINDING
 19) add into force-weilder.component.html:
@@ -123,6 +129,7 @@
     FormsModule
 ```
 22) `ng serve;`
+- [] Added my first 2-way binding
 
 ### DIRECTIVES
 23) create mock-force-weilders.ts:
@@ -236,6 +243,7 @@
   }
 ```
 29) `ng generate directive --spec=false`
+- [] Added my first directive
 
 ### SERVICES
 30) `ng generate service force-weilder --spec=false`
@@ -277,10 +285,11 @@ Async:
     return of(WEILDERS);
   }
 ```
+- [] Generated my first service
 
 ### ROUTING
 35) `ng generate module app-routing --flat --module=app --spec=false`
-36) add const into app-routinh.module.ts:
+36) add const into app-routing.module.ts:
 ```
   const routes: Routes = [
     { path: 'weilders', component: ForceWeilderComponent }
@@ -301,3 +310,4 @@ Rest can be deleted.
   AppRoutingModule,
   RouterModule
 ```
+- [] Generated my first module
