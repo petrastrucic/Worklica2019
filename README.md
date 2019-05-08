@@ -87,12 +87,10 @@ forceWeilder: ForceWeilder = {
 10) `ng serve;`
 11) refactor force-weilder.component.html into:
 ```
-<p>
-force-weilder works!
-</p>
 <h2>{{forceWeilder.name}} Details</h2>
 <div><span>id: </span>{{forceWeilder.id}}</div>
 <div><span>name: </span>{{forceWeilder.name}}</div>
+<div><span>force: </span>{{forceWeilder.force}}</div>
 ```
 12) `ng serve;`
 - [x] Generated my first component
