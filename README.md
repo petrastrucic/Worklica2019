@@ -304,22 +304,24 @@ getWeilders(): Observable<ForceWeilder[]> {
 
 ### ROUTING
 1) `ng generate module app-routing --flat --module=app --spec=false`
-2) add const into app-routing.module.ts:
+2) replace in app-routing.module.ts:
 ```
+import { RouterModule, Routes } from '@angular/router';
+
 const routes: Routes = [
   { path: 'weilders', component: ForceWeilderComponent }
 ];
-```
-and an import:
 
-`imports: [ RouterModule.forRoot(routes) ]`
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes)
+  ]
+})
+```
+3) replace `app-force-weilder` component in app.component.html with:
 
-Rest can be deleted.
-3) replace in app.component.html:
-```
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
-```
+`<router-outlet></router-outlet>`
+
 4) add as imports into app.module.ts:
 ```
 AppRoutingModule,
