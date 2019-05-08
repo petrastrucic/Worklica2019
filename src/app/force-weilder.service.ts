@@ -9,7 +9,7 @@ export class ForceWeilderService {
 
   constructor() { }
 
-  getHeroes(): ForceWeilder[] {
+  getWeilders(): ForceWeilder[] {
     return WEILDERS;
   }
   

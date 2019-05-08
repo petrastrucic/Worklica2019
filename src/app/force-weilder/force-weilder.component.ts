@@ -17,14 +17,14 @@ export class ForceWeilderComponent implements OnInit {
   constructor(private weilderService: ForceWeilderService) { }
 
   ngOnInit() {
-    this.weilders = this.weilderService.getHeroes();
+    this.getWeilders();
   }
 
   onSelect(forceWeilder: ForceWeilder): void {
     this.selectedForceWeilder = forceWeilder;
   }
 
-  getHeroes(): void {
-    this.weilders = this.weilderService.getHeroes();
+  getWeilders(): void {
+    this.weilders = this.weilderService.getWeilders();
   }
 }
