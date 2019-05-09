@@ -1,6 +1,6 @@
-import { ForceWeilder } from './force-weilder';
+import { ForceWielder } from './force-wielder';
 
-export const WEILDERS: ForceWeilder[] = [
+export const WIELDERS: ForceWielder[] = [
   { id: 11, name: 'Count Dooku' , force: 100 },
   { id: 12, name: 'Ahsoka Tano' , force: 60 },
   { id: 13, name: 'Anakin Skywalker' , force: 180 },
@@ -11,4 +11,4 @@ export const WEILDERS: ForceWeilder[] = [
   { id: 18, name: 'Qui-Gon Jinn' , force: 150 },
   { id: 19, name: 'Darth Plagueis' , force: 183 },
   { id: 20, name: 'Darth Sidious' , force: 9999 }
-]
+];
