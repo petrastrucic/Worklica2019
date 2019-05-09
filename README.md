@@ -278,14 +278,14 @@ getWielders(): void {
 }
 ```
 Async:
+
 4) replace in force-wielders.service.ts:
 ```
 getWielders(): Observable<ForceWielder[]> {
   return of(WIELDERS);
 }
 ```
-5) 
-replace in force-wielders.component.ts:
+5) replace in force-wielders.component.ts:
 ```
 ngOnInit() {
   this.getWielders();
