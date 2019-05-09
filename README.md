@@ -2,13 +2,10 @@
 
 ## NodeJS and Angular CLI installation
 1) `npm install -g @angular/cli`
-- [x] Finish Angular CLI installation
 
 ## Generate new project: initial-branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
-
-- [x] My new project is generated
 	
 ## Install bootstrap & font-awesome, add CSS
 1) `npm install bootstrap font-awesome`
@@ -44,7 +41,6 @@ h2, h3 {
 }
 ```
 5) `ng serve`
-- [x] Bootstrap and font-awesome installed, and basic css added
 	
 ## ng generate
 1) `ng generate` / `ng help`
@@ -59,7 +55,6 @@ export class ForceWeilder {
   force: number;
 }
 ```
-- [x] Generated my first class
 
 ### COMPONENT
 1) `ng generate component force-weilder --spec=false`
@@ -94,7 +89,6 @@ forceWeilder: ForceWeilder = {
 <div><span>force: </span>{{forceWeilder.force}}</div>
 ```
 10) `ng serve;`
-- [x] Generated my first component
 
 ### PIPES
 1) refactor 1st line in force-weilder.component.html:
@@ -114,7 +108,6 @@ transform(value: number): number {
 `<div><span>force: </span>{{forceWeilder.force | forceToThird}}</div>`
 
 6) `ng serve;`
-- [x] Generated my first pipe
 
 ### 2WAY BINDING
 1) add into force-weilder.component.html:
@@ -140,7 +133,6 @@ imports: [
   (...)
   
 4) `ng serve;`
-- [x] Added my first 2-way binding
 
 ### DIRECTIVES
 1) create mock-force-weilders.ts:
@@ -257,7 +249,6 @@ onSelect(forceWeilder: ForceWeilder): void {
 }
 ```
 7) `ng generate directive --spec=false`
-- [x] Added my first directive
 
 ### SERVICES
 1) `ng generate service force-weilder --spec=false`
@@ -300,7 +291,6 @@ getWeilders(): Observable<ForceWeilder[]> {
   return of(WEILDERS);
 }
 ```
-- [x] Generated my first service
 
 ### ROUTING
 1) `ng generate module app-routing --flat --module=app --spec=false`
@@ -327,4 +317,3 @@ const routes: Routes = [
 AppRoutingModule,
 RouterModule
 ```
-- [x] Generated my first module
