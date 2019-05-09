@@ -113,7 +113,7 @@ transform(value: number): number {
 1) add into force-wielder.component.html:
 ```
 <div>
-  <label>force:
+  <label>forceInput:
     <input [(ngModel)]="forceWielder.force" placeholder="force"/>
   </label>
 </div>
