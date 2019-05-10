@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ForceWeilderComponent } from './force-weilder/force-weilder.component';
 
 const routes: Routes = [
-  { path: 'weilders', component: ForceWeilderComponent }
+  { path: 'wielders', component: ForceWeilderComponent }
 ];
 
 @NgModule({
