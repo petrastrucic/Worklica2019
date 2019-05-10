@@ -1,0 +1,20 @@
+<h2>My Force Wielders</h2>
+<ul class="wielders">
+    <li *ngFor="let wielder of wielders" [class.selected]="wielder === selectedForceWielder"
+        (click)="onSelect(wielder)">
+        <span class="badge">{{wielder.id}}</span> {{wielder.name}}
+    </li>
+</ul>
+<div *ngIf="selectedForceWielder">
+    <h2>{{selectedForceWielder.name | uppercase}} Details</h2>
+    <div><span>Id : </span>{{selectedForceWielder.id}}</div>
+    <label>Name:
+        <input [(ngModel)]="selectedForceWielder.name" placeholder="name" />
+    </label>
+    <div>
+        <label>Force:
+            <input [(ngModel)]="selectedForceWielder.force" placeholder="force" />
+        </label>
+    </div>
+    <div><span>ForceToThird: </span>{{selectedForceWielder.force | forceToThird}}</div>
+</div>
