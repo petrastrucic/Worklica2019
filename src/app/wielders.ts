@@ -1,6 +1,6 @@
-import { ForceWeilder } from './force-weilder';
+import { ForceWielder } from './force-wielder';
 
-export const WEILDERS: ForceWeilder[] = [
+export const WIELDERS: ForceWielder[] = [
   { id: 11, name: 'Count Dooku' , force: 100 },
   { id: 12, name: 'Ahsoka Tano' , force: 60 },
   { id: 13, name: 'Anakin Skywalker' , force: 180 },

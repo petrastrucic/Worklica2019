@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ForceWeilderComponent } from './force-weilder/force-weilder.component';
+import { ForceWielderComponent } from './force-wielder/force-wielder.component';
 
 const routes: Routes = [
-  { path: 'wielders', component: ForceWeilderComponent }
+  { path: 'wielders', component: ForceWielderComponent }
 ];
 
 @NgModule({
