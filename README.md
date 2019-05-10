@@ -6,8 +6,6 @@
 ## Generate new project: initial-branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
-3) remove `~` and `^` from package version declarations in package.json
-4) add `package-lock.json` in .gitignore
 	
 ## Install bootstrap & font-awesome, add CSS
 1) `npm install bootstrap font-awesome`
