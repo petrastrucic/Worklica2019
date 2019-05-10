@@ -2,13 +2,12 @@
 
 ## NodeJS and Angular CLI installation
 1) `npm install -g @angular/cli`
-- [x] Finish Angular CLI installation
 
 ## Generate new project: initial-branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
-
-- [x] My new project is generated
+3) remove `~` and `^` from package version declarations in package.json
+4) add `package-lock.json` in .gitignore
 	
 ## Install bootstrap & font-awesome, add CSS
 1) `npm install bootstrap font-awesome`
@@ -44,90 +43,86 @@ h2, h3 {
 }
 ```
 5) `ng serve`
-- [x] Bootstrap and font-awesome installed, and basic css added
 	
 ## ng generate
 1) `ng generate` / `ng help`
   
 ### CLASS
-1) `ng generate class force-weilder --spec=false`
-2) add into force-weilder.ts:
+1) `ng generate class force-wielder --spec=false`
+2) add into force-wielder.ts:
 ```
-export class ForceWeilder {
+export class ForceWielder {
   id: number;
   name: string;
   force: number;
 }
 ```
-- [x] Generated my first class
 
 ### COMPONENT
-4) `ng generate component force-weilder --spec=false`
-5) add into force-weilder.component.ts:
+1) `ng generate component force-wielder --spec=false`
+2) add into force-wielder.component.ts:
 
-`forceWeilder = "Mace Windu";`
+`forceWielder = "Mace Windu";`
 		
-6) add into force-weilder.component.html:
+3) add into force-wielder.component.html:
 
-`{{forceWeilder}}`
+`{{forceWielder}}`
 
-7) add into app.component.html:
+4) add into app.component.html:
 
-`<app-force-weilder></app-force-weilder>`
+`<app-force-wielder></app-force-wielder>`
 
-8) `ng serve;`
-9) refactor forceWeilder in force-weilder.comoponent.ts:
+5) update `src` of `img` in app.component.html
+6) `ng serve;`
+7) refactor forceWielder in force-wielder.comoponent.ts:
 ```
-forceWeilder: ForceWeilder = {
+forceWielder: ForceWielder = {
   id : 1,
   name : "Mace Windu",
   force: 42
 }
 ```    
+8) `ng serve;`
+9) refactor force-wielder.component.html into:
+```
+<h2>{{forceWielder.name}} Details</h2>
+<div><span>id: </span>{{forceWielder.id}}</div>
+<div><span>name: </span>{{forceWielder.name}}</div>
+<div><span>force: </span>{{forceWielder.force}}</div>
+```
 10) `ng serve;`
-11) refactor force-weilder.component.html into:
-```
-<p>
-force-weilder works!
-</p>
-<h2>{{forceWeilder.name}} Details</h2>
-<div><span>id: </span>{{forceWeilder.id}}</div>
-<div><span>name: </span>{{forceWeilder.name}}</div>
-```
-12) `ng serve;`
-- [x] Generated my first component
 
 ### PIPES
-13) refactor 1st line in force-weilder.component.html:
+1) refactor 1st line in force-wielder.component.html:
 
-`<h2>{{forceWeilder.name | uppercase}} Details</h2>`
+`<h2>{{forceWielder.name | uppercase}} Details</h2>`
 
-14) `ng serve;`
-15) `ng generate pipe force-to-third --spec false`
-16) add into force-to-third.ts:
+2) `ng serve;`
+3) `ng generate pipe force-to-third --spec false`
+4) add into force-to-third.ts:
 ```
 transform(value: number): number {
   return Math.pow(value, 3);
 }
 ```
-17) add into force-weilder.component.html:
+5) add into force-wielder.component.html:
 
-`<div><span>force: </span>{{forceWeilder.force | forceToThird}}</div>`
+`<div><span>force: </span>{{forceWielder.force | forceToThird}}</div>`
 
-18) `ng serve;`
-- [x] Generated my first pipe
+6) `ng serve;`
 
 ### 2WAY BINDING
-19) add into force-weilder.component.html:
+1) add into force-wielder.component.html:
 ```
 <div>
-  <label>force:
-    <input [(ngModel)]="forceWeilder.force" placeholder="force"/>
+  <label>forceInput:
+    <input [(ngModel)]="forceWielder.force" placeholder="force"/>
   </label>
 </div>
 ```
-20) `ng serve;`
-21) add into app.module.ts:
+2) `ng serve;`
+
+3) add into app.module.ts:
 
 `import { FormsModule } from '@angular/forms';`
 
@@ -138,14 +133,15 @@ imports: [
   FormsModule
 ```
   (...)
-22) `ng serve;`
-- [x] Added my first 2-way binding
+  
+4) `ng serve;`
 
 ### DIRECTIVES
-23) create mock-force-weilders.ts:
+1) create mock-force-wielders.ts:
 ```
-import { ForceWeilder } from './force-weilder';
-export const WEILDERS: ForceWeilder[] = [
+import { ForceWielder } from './force-wielder';
+
+export const WIELDERS: ForceWielder[] = [
   { id: 11, name: 'Count Dooku' , force: 100 },
   { id: 12, name: 'Ahsoka Tano' , force: 60 },
   { id: 13, name: 'Anakin Skywalker' , force: 180 },
@@ -158,168 +154,177 @@ export const WEILDERS: ForceWeilder[] = [
   { id: 20, name: 'Darth Sidious' , force: 9999 }
 ]
 ```
-24) add into force-weilders.ts:
+2) add into force-wielders.ts:
 
-`weilders = WEILDERS;`
+`wielders = WIELDERS;`
 
-25) add into force-weilder.component.html:
+3) add into force-wielder.component.html:
 ```
-<h2>My Force Weilders</h2>
-<ul class="weilders">
-  <li *ngFor="let weilder of weilders">
-  <span class="badge">{{weilder.id}}</span> {{weilder.name}}
+<h2>My Force Wielders</h2>
+<ul class="wielders">
+  <li *ngFor="let wielder of wielders">
+  <span class="badge">{{wielder.id}}</span> {{wielder.name}}
 </ul>
 ```
-26) replace all in force-weilder.component.css:
+4) replace all in force-wielder.component.css:
 ```
 .selected {
   background-color: #CFD8DC !important;
   color: white;
 }
-.weilders {
+.wielders {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-.weilders li {
+.wielders li {
   cursor: pointer;
   position: relative;
   left: 0;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 2.5em;
   border-radius: 4px;
 }
-  .weilders li.selected:hover {
+  .wielders li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;
 }
-  .weilders li:hover {
+  .wielders li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
-  .weilders .text {
+  .wielders .text {
   position: relative;
   top: -3px;
 }
-.weilders .badge {
+.wielders .badge {
   display: inline-block;
   font-size: small;
-  color: white;
+  color: #e9ecef;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
+  background-color: #17a2b8;
+  line-height: 1.75em;
   position: relative;
   left: -1px;
   top: -4px;
-  height: 1.8em;
+  height: 3.0em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
 ```
-27) replace all in force-weilder.component.html:
+5) replace all in force-wielder.component.html:
 ```
-<h2>My Force Weilders</h2>
-<ul class="weilders">
-  <li *ngFor="let weilder of weilders"
-    [class.selected]="weilder === selectedForceWeilder"
-    (click)="onSelect(weilder)">
-    <span class="badge">{{weilder.id}}</span> {{weilder.name}} 
-  </li>
+<h2>My Force Wielders</h2>
+<ul class="wielders">
+    <li *ngFor="let wielder of wielders" [class.selected]="wielder === selectedForceWielder"
+        (click)="onSelect(wielder)">
+        <span class="badge">{{wielder.id}}</span> {{wielder.name}}
+    </li>
 </ul>
-<div *ngIf="selectedForceWeilder">
-  <h2>{{forceWeilder.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{forceWeilder.id}}</div>
-  <label>name:
-    <input [(ngModel)]="selectedForceWeilder.name" placeholder="name"/>
-  </label>
-  <div>
-    <label>force:
-      <input [(ngModel)]="selectedForceWeilder.force" placeholder="force"/>
+<div *ngIf="selectedForceWielder">
+    <h2>{{selectedForceWielder.name | uppercase}} Details</h2>
+    <div><span>Id : </span>{{selectedForceWielder.id}}</div>
+    <label>Name:
+        <input [(ngModel)]="selectedForceWielder.name" placeholder="name" />
     </label>
-  </div>
+    <div>
+        <label>Force:
+            <input [(ngModel)]="selectedForceWielder.force" placeholder="force" />
+        </label>
+    </div>
+    <div><span>ForceToThird: </span>{{selectedForceWielder.force | forceToThird}}</div>
 </div>
 ```
-28) add into force-weilder.component.ts:
+6) add into force-wielder.component.ts:
 ```
-weilders = WEILDERS;
-selectedForceWeilder: ForceWeilder;
+wielders = WIELDERS;
+selectedForceWielder: ForceWielder;
 ```
 (...)
 ```
-onSelect(forceWeilder: ForceWeilder): void {
-  this.selectedForceWeilder = forceWeilder;
+onSelect(forceWielder: ForceWielder): void {
+  this.selectedForceWielder = forceWielder;
 }
 ```
-29) `ng generate directive --spec=false`
-- [x] Added my first directive
+7) `ng generate directive --spec=false`
 
 ### SERVICES
-30) `ng generate service force-weilder --spec=false`
-31) add into force-weilder.service.ts:
+1) `ng generate service force-wielder --spec=false`
+2) add into force-wielder.service.ts:
 ```
-getHeroes(): ForceWeilder[] {
-  return WEILDERS;
+getWielders(): ForceWielder[] {
+  return WIELDERS;
 }
 ```
-32) replace in force-weilders.component.cs:
+3) replace in force-wielders.component.cs:
 ```
-weilders: ForceWeilder[];
-selectedForceWeilder: ForceWeilder;
+wielders: ForceWielder[];
+selectedForceWielder: ForceWielder;
 
-constructor(private weilderService: ForceWeilderService) { }
+constructor(private wielderService: ForceWielderService) { }
 
 ngOnInit() {
+  this.wielders = this.getWielders();
 }
 
-onSelect(forceWeilder: ForceWeilder): void {
-  this.selectedForceWeilder = forceWeilder;
+onSelect(forceWielder: ForceWielder): void {
+  this.selectedForceWielder = forceWielder;
 }
 
-getHeroes(): void {
-  this.weilders = this.weilderService.getHeroes();
+getWielders(): void {
+  this.wielders = this.wielderService.getWielders();
 }
 ```
 Async:
-33) replace in force-weilders.component.cs:
+
+4) replace in force-wielders.service.ts:
 ```
-getHeroes(): void {
-  this.weilderService.getWeilders()
-    .subscribe(weilders => this.weilders = weilders);;
+getWielders(): Observable<ForceWielder[]> {
+  return of(WIELDERS);
 }
 ```
-34) replace in force-weilders.service.ts:
+5) replace in force-wielders.component.ts:
 ```
-getWeilders(): Observable<ForceWeilder[]> {
-  return of(WEILDERS);
+ngOnInit() {
+  this.getWielders();
+}
+
+getWielders(): void {
+  this.wielderService.getWielders()
+    .subscribe(wielders => this.wielders = wielders);
+}
+
+onSelect(forceWielder: ForceWielder): void {
+  this.selectedForceWielder = forceWielder;
 }
 ```
-- [x] Generated my first service
 
 ### ROUTING
-35) `ng generate module app-routing --flat --module=app --spec=false`
-36) add const into app-routing.module.ts:
+1) `ng generate module app-routing --flat --module=app --spec=false`
+2) replace in app-routing.module.ts:
 ```
+import { RouterModule, Routes } from '@angular/router';
+
 const routes: Routes = [
-  { path: 'weilders', component: ForceWeilderComponent }
+  { path: 'wielders', component: ForceWielderComponent }
 ];
-```
-and an import:
 
-`imports: [ RouterModule.forRoot(routes) ]`
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes)
+  ]
+})
+```
+3) replace `app-force-wielder` component in app.component.html with:
 
-Rest can be deleted.
-37) replace in app.component.html:
-```
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
-```
-38) add as imports into app.module.ts:
+`<router-outlet></router-outlet>`
+
+4) add as imports into app.module.ts:
 ```
 AppRoutingModule,
 RouterModule
 ```
-- [x] Generated my first module
