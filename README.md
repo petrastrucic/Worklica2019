@@ -3,13 +3,13 @@
 ## NodeJS and Angular CLI installation
 1) `npm install -g @angular/cli`
 
-## Generate new project: initial-branch
+## Generate new project: project-initialisation branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
 3) remove `~` and `^` from package version declarations in package.json
 4) add `package-lock.json` in .gitignore
 	
-## Install bootstrap & font-awesome, add CSS
+## Install bootstrap & font-awesome, add CSS: bootstrap-fa branch
 1) `npm install bootstrap font-awesome`
 2) add into src/styles.css:
 ```
