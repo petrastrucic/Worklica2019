@@ -3,7 +3,7 @@
 ## NodeJS and Angular CLI installation
 1) `npm install -g @angular/cli`
 
-## Generate new project: ng-new branch
+## Generate new project: project-initialisation branch
 1) `ng new Worklica2019-[YourName]`
 2) `ng serve --open`
 3) remove `~` and `^` from package version declarations in package.json
